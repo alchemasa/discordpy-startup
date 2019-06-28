@@ -420,13 +420,10 @@ wolf = ['kouseiふざけんなマジぃ～',
 async def on_command_error(ctx, error):
     await ctx.send(str(error))
 
-# メッセージ受信時に動作する処理
 @client.event
 async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 「/pine」と発言したら「」が返る処理
 	if message.content == '/pine':
         await message.channel.send(random.choice(pine))
         return
