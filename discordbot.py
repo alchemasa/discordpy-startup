@@ -10,7 +10,7 @@ token = os.environ['DISCORD_BOT_TOKEN']
 async def on_command_error(ctx, error):
     await ctx.send(str(error))
 
-@bot.command()
+@bot.event
 async def on_message(message):
     if message.content == '/pine':
 	pine = ['ウルフウルフ、どこ？今登った、登った！',
