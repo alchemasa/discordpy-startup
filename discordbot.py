@@ -424,9 +424,9 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-@bot.command()
-async def pine(ctx):
-	await ctx.send(pine_c)
+#@bot.command()
+#async def pine(ctx):
+#	await ctx.send(pine_c)
 	
 #@bot.command()
 #async def kousei(ctx):
