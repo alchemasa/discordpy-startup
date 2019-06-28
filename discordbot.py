@@ -423,9 +423,21 @@ async def on_command_error(ctx, error):
 
 
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-
+async def on_message(message):
+	if message.content == '/pine':
+        await message.channel.send(random.choice(pine))
+        
+    if message.content == '/kousei':
+        await message.channel.send(random.choice(kousei))
+        
+    if message.content == '/dodon':
+        await message.channel.send(random.choice(dodon))
+        
+    if message.content == '/wolf':
+        await message.channel.send(random.choice(wolf))
+        
+    if message.content == '/sky':
+        await message.channel.send(random.choice(sky))
 
 bot.run(token)
 
