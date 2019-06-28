@@ -420,12 +420,12 @@ wolf = ['kouseiふざけんなマジぃ～',
 async def on_command_error(ctx, error):
     await ctx.send(str(error))
 
-@client.event
+@bot.command()
 async def on_message(message):
     if message.author.bot:
         return
-	if message.content == '/pine':
-        await message.channel.send(random.choice(pine))
+    if message.content == '/pine':
+    	await message.channel.send(random.choice(pine))
     if message.content == '/kousei':
         await message.channel.send(random.choice(kousei))
     if message.content == '/dodon':
