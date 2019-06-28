@@ -414,6 +414,8 @@ dodon = ['ウルフウルフ、どこ？今登った、登った！',
 			'FDさんを虐めた',
 			'ってことでドミネ行こう',
 			'ドミネ行こう？・・・ドミネ行こ？']
+pine_c = random.choice(pine)
+	
 @bot.event
 async def on_command_error(ctx, error):
     await ctx.send(str(error))
@@ -424,22 +426,22 @@ async def ping(ctx):
     
 @bot.command()
 async def pine(ctx):
-	await ctx.send(random.choice(pine))
+	await ctx.send(pine_c)
 	
-@bot.command()
-async def kousei(ctx):
-        await ctx.send(random.choice(kousei))
+#@bot.command()
+#async def kousei(ctx):
+#        await ctx.send(random.choice(kousei))
 		
-@bot.command()
-async def dodon(ctx):
-		await ctx.send(random.choice(dodon))
+#@bot.command()
+#async def dodon(ctx):
+#		await ctx.send(random.choice(dodon))
 		
-@bot.command()
-async def wolf(ctx):
-		 await ctx.send(random.choice(wolf))
+#@bot.command()
+#async def wolf(ctx):
+#		 await ctx.send(random.choice(wolf))
 		
-@bot.command()
-async def sky(ctx):
-        await ctx.send(random.choice(sky))
+#@bot.command()
+#async def sky(ctx):
+#        await ctx.send(random.choice(sky))
 
 bot.run(token)
