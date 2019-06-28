@@ -8,16 +8,15 @@ bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 @bot.event
-async def on_command_error(message, error):
-    await message.send(str(error))
+async def on_command_error(ctx, error):
+    await ctx.send(str(error))
 
 @bot.command()
-async def ping(message):
-    await message.send('pong')
+async def ping(ctx):
+    await ctx.send('pong')
     
 @bot.command()
-async def on_message(message):
-    if message.content == '/pine':
+async def pine(ctx):
 		pine = ['ウルフウルフ、どこ？今登った、登った！',
 			'ウルフいた！ウルフ後ろ！',
 			'いやーもぅピネって奴ふざけんなよ！',
@@ -222,9 +221,9 @@ async def on_message(message):
 			'いやドミネ行く',
 			'ドミネ行こうよ',
 			'ドミネ行こう？']
-		await message.channel.send(random.choice(pine))
-	
-	if message.content == '/kousei':
+		await ctx.send(random.choice(pine))
+@bot.command()
+async def kousei(ctx):
 		kousei = ['優しいこの人、マジで',
 			'ありがとうございます！',
 			'よろしくお願いします メールで送ったように',
@@ -316,9 +315,9 @@ async def on_message(message):
 			'じゃ待て。じゃあこの人F・・・さん',
 			'やーやーじゃここはっぱ抜けよ抜けよ！',
 			'いいよ、抜け早く抜けろ']
-        await message.channel.send(random.choice(kousei))
-	
-    if message.content == '/dodon':
+        await ctx.send(random.choice(kousei))
+@bot.command()
+async def dodon(ctx):
 		dodon = ['ウルフウルフ、どこ？今登った、登った！',
 			'ウルフいた！ウルフ後ろ！',
 			'いやーもぅピネって奴ふざけんなよ！',
@@ -397,9 +396,9 @@ async def on_message(message):
 			'なんで抜けねえのよ・・・ピネってやつ',
 			'ドミネ行くの？',
 			'うん・・・']
-        	await message.channel.send(random.choice(dodon))
-		
-	if message.content == '/wolf':
+        	await ctx.send(random.choice(dodon))
+@bot.command()
+async def wolf(ctx):
 		wolf = ['kouseiふざけんなマジぃ～',
 			'調子こいてっとKO☆RO☆SU☆ZO',
 			'ﾌｯ',
@@ -416,9 +415,9 @@ async def on_message(message):
 			'いやドミネ行く',
 			'ドミネ行こうよ',
 			'ドミネ行こう？']
-        await message.channel.send(random.choice(wolf))
-	
-    if message.content == '/sky':
+        await ctx.send(random.choice(wolf))
+@bot.command()
+async def sky(ctx):
 		sky = ['あぁｺﾞﾒﾝｺﾞﾒﾝｺﾞﾒﾝ',
 			'あｺﾞﾒﾝSD',
 			'SD？FD?（混乱）',
@@ -438,6 +437,6 @@ async def on_message(message):
 			'FDさんを虐めた',
 			'ってことでドミネ行こう',
 			'ドミネ行こう？・・・ドミネ行こ？']
-        await message.channel.send(random.choice(sky))
+        await ctx.send(random.choice(sky))
 
 bot.run(token)
