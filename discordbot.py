@@ -6,18 +6,7 @@ import random
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-
-@bot.event
-async def on_command_error(ctx, error):
-    await ctx.send(str(error))
-
-@bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
-    
-@bot.command()
-async def pine(ctx):
-		pine = ['ウルフウルフ、どこ？今登った、登った！',
+pine = ['ウルフウルフ、どこ？今登った、登った！',
 			'ウルフいた！ウルフ後ろ！',
 			'いやーもぅピネって奴ふざけんなよ！',
 			'お前出て行けよピネって奴よ！',
@@ -221,10 +210,7 @@ async def pine(ctx):
 			'いやドミネ行く',
 			'ドミネ行こうよ',
 			'ドミネ行こう？']
-		await ctx.send(random.choice(pine))
-@bot.command()
-async def kousei(ctx):
-		kousei = ['優しいこの人、マジで',
+kousei = ['優しいこの人、マジで',
 			'ありがとうございます！',
 			'よろしくお願いします メールで送ったように',
 			'ここ来て下さいじゃあFDさんずっと',
@@ -315,10 +301,7 @@ async def kousei(ctx):
 			'じゃ待て。じゃあこの人F・・・さん',
 			'やーやーじゃここはっぱ抜けよ抜けよ！',
 			'いいよ、抜け早く抜けろ']
-        await ctx.send(random.choice(kousei))
-@bot.command()
-async def dodon(ctx):
-		dodon = ['ウルフウルフ、どこ？今登った、登った！',
+dodon = ['ウルフウルフ、どこ？今登った、登った！',
 			'ウルフいた！ウルフ後ろ！',
 			'いやーもぅピネって奴ふざけんなよ！',
 			'お前出て行けよピネって奴よ！',
@@ -396,10 +379,7 @@ async def dodon(ctx):
 			'なんで抜けねえのよ・・・ピネってやつ',
 			'ドミネ行くの？',
 			'うん・・・']
-        	await ctx.send(random.choice(dodon))
-@bot.command()
-async def wolf(ctx):
-		wolf = ['kouseiふざけんなマジぃ～',
+    wolf = ['kouseiふざけんなマジぃ～',
 			'調子こいてっとKO☆RO☆SU☆ZO',
 			'ﾌｯ',
 			'じゃ殺さないからフレ消すねって言ったらどうする？',
@@ -415,10 +395,7 @@ async def wolf(ctx):
 			'いやドミネ行く',
 			'ドミネ行こうよ',
 			'ドミネ行こう？']
-        await ctx.send(random.choice(wolf))
-@bot.command()
-async def sky(ctx):
-		sky = ['あぁｺﾞﾒﾝｺﾞﾒﾝｺﾞﾒﾝ',
+	sky = ['あぁｺﾞﾒﾝｺﾞﾒﾝｺﾞﾒﾝ',
 			'あｺﾞﾒﾝSD',
 			'SD？FD?（混乱）',
 			'う～わっ・・・',
@@ -437,6 +414,32 @@ async def sky(ctx):
 			'FDさんを虐めた',
 			'ってことでドミネ行こう',
 			'ドミネ行こう？・・・ドミネ行こ？']
+@bot.event
+async def on_command_error(ctx, error):
+    await ctx.send(str(error))
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+    
+@bot.command()
+async def pine(ctx):
+	await ctx.send(random.choice(pine))
+	
+@bot.command()
+async def kousei(ctx):
+        await ctx.send(random.choice(kousei))
+		
+@bot.command()
+async def dodon(ctx):
+		await ctx.send(random.choice(dodon))
+		
+@bot.command()
+async def wolf(ctx):
+		 await ctx.send(random.choice(wolf))
+		
+@bot.command()
+async def sky(ctx):
         await ctx.send(random.choice(sky))
 
 bot.run(token)
