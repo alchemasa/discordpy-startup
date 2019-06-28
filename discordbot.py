@@ -426,18 +426,13 @@ async def on_message(message):
         return
 	if message.content == '/pine':
         await message.channel.send(random.choice(pine))
-        return
     if message.content == '/kousei':
         await message.channel.send(random.choice(kousei))
-        return
     if message.content == '/dodon':
         await message.channel.send(random.choice(dodon))
-        return
     if message.content == '/wolf':
         await message.channel.send(random.choice(wolf))
-        return
     if message.content == '/sky':
         await message.channel.send(random.choice(sky))
-        return
 
 bot.run(token)
